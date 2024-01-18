@@ -1,4 +1,4 @@
-export type Request = {
+export type Requests = {
     id: number,
     submitterName: string
     submitterPhone: string

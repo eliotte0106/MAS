@@ -1,8 +1,8 @@
-import { Request, RequestStatus } from "@/types";
+import { Requests, RequestStatus } from "@/types";
 import mongoose, { Schema, model, models } from "mongoose";
 
 
-const RequestSchema = new Schema<Request>({
+const RequestSchema = new Schema<Requests>({
     submitterName: String,
     submitterPhone: String,
     submitterEmail: String,

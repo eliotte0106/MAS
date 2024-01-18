@@ -2,7 +2,8 @@ import { connectToDB } from "@/lib/db";
 import { RequestModel } from "@/schemas/request";
 import { RequestStatus } from "@/types";
 import { NextResponse } from "next/server";
-
+import { deleteObject } from "firebase/storage";
+import { storageRef } from "@/lib/firebase";
 
 export async function DELETE(
     req: Request,
@@ -17,6 +18,10 @@ export async function DELETE(
         let request = await RequestModel.findByIdAndDelete(requestId)
 
         if (request) {
+            if(request.photo) {
+                const ref = storageRef(request.photo)
+                await deleteObject(ref)
+            }
             return NextResponse.json({
                 request: request,
                 message: "request deleted"
@@ -38,9 +43,7 @@ export async function PATCH(
     { params } : { params : { requestid: string }}
 ) {
     await connectToDB();
-    
     const body = await req.json();
-
     const { inspector, status } = body;
     const requestId = params.requestid;
 
@@ -49,6 +52,7 @@ export async function PATCH(
     }
 
     const request = await RequestModel.findById(requestId);
+
     if( !request ) {
         return new NextResponse("Invalid request", { status: 404 });
     }
@@ -59,9 +63,7 @@ export async function PATCH(
         request.assignedInspector = inspector || request.assignedInspector
 
     request.status = status || request.status
-
     await request.save()
-
     return NextResponse.json({
         request: request,
         message: "request update completed"
