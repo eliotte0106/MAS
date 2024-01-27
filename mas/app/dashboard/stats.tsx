@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { buildUrl } from '@/lib/utils'
 import React from 'react'
 import {
     MdFiberNew,
@@ -12,9 +13,11 @@ interface Stats {
 
 async function Stats() {
 
-    // data from the backend fetch request
+    const stats = await fetch(buildUrl('stats'), {
+        cache: 'no-cache'
+    })
 
-    const json: Stats[] = []// await stats.json()
+    const json: Stats[] = await stats.json()
 
     const statsFor = (token: string) => {
         const filteredStats = json.filter(stats => stats._id.status === token)
@@ -27,7 +30,7 @@ async function Stats() {
             <Card className='bg-orange-300'>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-lg font-medium">
-                        New Request
+                        New Requests
                     </CardTitle>
                     <div className="stat-figure text-white">
                         <MdFiberNew size="2em" />
