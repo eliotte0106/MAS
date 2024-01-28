@@ -77,13 +77,13 @@ export const columns: ColumnDef<Requests>[] = [
 
             switch(status) {
                 case 'new':
-                    color = 'bg-orange-300'
-                    break;
-                case 'assigned':
                     color = 'bg-purple-300'
                     break;
+                case 'assigned':
+                    color = 'bg-blue-300'
+                    break;
                 case 'unassigned':
-                    color = 'bg-red-300'
+                    color = 'bg-green-300'
                     break
             }
 

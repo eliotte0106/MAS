@@ -38,7 +38,6 @@ export function RowActions({
     const [progress, setProgress] = useState(false)
     const [open, setOpen] = useState(false)
 
-    // using reducer
     const [state, setState] = useReducer((prevstate: RowActionReducerProps, params: RowActionReducerProps) => {
         return {...prevstate, ...params}
     }, {
@@ -110,7 +109,7 @@ export function RowActions({
     const handleUnassign = async () => {
         try {
             setProgress(true);
-            // fire an api call to update the request
+
             const result = await fetch(buildUrl(`request/${request.id}`), {
                 method: 'PATCH',
                 body: JSON.stringify({

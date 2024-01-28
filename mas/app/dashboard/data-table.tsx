@@ -96,7 +96,6 @@ export function DataTable<TData, TValue>({
                 requestsToMark.push(row?.original as Requests)
             })
 
-            // fire a http call
             await fetch(buildUrl('request/bulk'), {
                 method: 'PATCH',
                 body: JSON.stringify({
@@ -153,12 +152,12 @@ export function DataTable<TData, TValue>({
                     Object.keys(rowSelection).length > 0 ?
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
-                                <Button>Bulk Action <BsChevronDown className="ml-2" /></Button>
+                                <Button>Action <BsChevronDown className="ml-2" /></Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent>
                                 <DropdownMenuItem className="text-green-600"
                                     onClick={handleMarkComplete}>
-                                    Mark Complete
+                                    Mark As Complete
                                 </DropdownMenuItem>
                                 <DropdownMenuItem className="text-red-600"
                                     onClick={handleDelete}

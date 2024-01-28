@@ -27,7 +27,7 @@ async function Stats() {
     return (
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
 
-            <Card className='bg-orange-300'>
+            <Card className='bg-purple-300'>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-lg font-medium">
                         New Requests
@@ -41,7 +41,7 @@ async function Stats() {
                 </CardContent>
             </Card>
 
-            <Card className="bg-green-300">
+            <Card className="bg-orange-300">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-lg font-medium">
                         Completed
@@ -55,7 +55,7 @@ async function Stats() {
                 </CardContent>
             </Card>
 
-            <Card className="bg-purple-300">
+            <Card className="bg-blue-300">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-lg font-medium">
                         Assigned
@@ -69,7 +69,7 @@ async function Stats() {
                 </CardContent>
             </Card>
             
-            <Card className="bg-red-300">
+            <Card className="bg-green-300">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-lg font-medium">
                         Unassigned
