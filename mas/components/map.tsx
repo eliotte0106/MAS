@@ -25,7 +25,6 @@ function Map(latlong: LatLong) {
             const { Map } = await loader.importLibrary('maps') as google.maps.MapsLibrary
             const { Marker } = await loader.importLibrary('marker') as google.maps.MarkerLibrary
 
-            // 43.6425662,-79.3870568
             const position = {
                 lat: latlong.coordinates[0],
                 lng: latlong.coordinates[1]
@@ -34,7 +33,7 @@ function Map(latlong: LatLong) {
             const mapOptions = {
                 center: position,
                 zoom: 17,
-                mapId: 'PETRESCUE-1234'
+                mapId: 'SAFECAR-1234'
             }
 
             const map = new Map(mapRef.current as HTMLDivElement, mapOptions)
@@ -42,7 +41,7 @@ function Map(latlong: LatLong) {
             const marker = new Marker({
                 map: map,
                 position: position,
-                title: "Pet found here",
+                title: "Car location",
                 icon: {
                     url: 'marker_flag.png',
                     size: new google.maps.Size(32,32)
