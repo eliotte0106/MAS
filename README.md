@@ -1,5 +1,10 @@
 # MAS Web
 
+## Description
+* This web app allows users to see the requests coming from other devices
+* This app is a admin-page version that shows the data table as a dashboard
+* Then, users who signed-up to this app will be able to manage all the requests(assign, unassign, delete, mark as complete) 
+
 ## Instructions
 * Clone this repo or download a zip of this repo
 * Go into mas folder (cd mas)
@@ -14,6 +19,7 @@
 * iOS repo: https://github.com/eliotte0106/MAS-iOS
 
 ## Demo
+* https://www.youtube.com/watch?v=d9Uew2PoKQ0
 
 ## References
 * https://nextjs.org/docs
