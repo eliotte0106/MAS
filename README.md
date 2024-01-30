@@ -27,3 +27,6 @@
 * https://firebase.google.com/docs/hosting/frameworks/nextjs
 * https://developers.google.com/maps
 * https://www.mongodb.com/developer/languages/javascript/nextjs-with-mongodb/
+* https://www.youtube.com/watch?v=w2h54xz6Ndw
+* https://www.youtube.com/watch?v=cBg6xA5C60s
+* https://www.youtube.com/watch?v=vrR4MlB7nBI
