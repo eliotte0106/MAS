@@ -8,7 +8,7 @@
 ## Instructions
 * Clone this repo or download a zip of this repo
 * Go into mas folder (cd mas)
-* Type "npm run dev"
+* Type "npm run dev" and go to localhost:3000 on your web.
 * Then, you can see the admin page
 * Sign-up for your account
 * You can see all the requests coming from other devices (* Make sure all the connected devices should be using same ip address *)
